@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
       - id: ldflags
         run: |
-          echo "value=$(./scripts/version-ldflags)" >> "$GITHUB_OUTPUT"
+          echo "value=$(./release/version-ldflags)" >> "$GITHUB_OUTPUT"
 
   rekor-cli-build:
     needs: ldflags
