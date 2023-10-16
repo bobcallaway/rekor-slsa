@@ -45,7 +45,7 @@ jobs:
     # https://github.com/slsa-framework/slsa-github-generator/tree/main/internal/builders/go#referencing-the-slsa-builder
     uses: slsa-framework/slsa-github-generator/.github/workflows/builder_go_slsa3.yml@v1.9.0
     with:
-      go-version-file: './go.mod'
+      go-version-file: './__PROJECT_CHECKOUT_DIR__/go.mod'
       config-file: .slsa-goreleaser/rekor-cli-${{matrix.os}}-${{matrix.arch}}.yml
       evaluated-envs: "VERSION_LDFLAGS:${{needs.ldflags.outputs.ldflags}}"
 
@@ -62,7 +62,7 @@ jobs:
     # https://github.com/slsa-framework/slsa-github-generator/tree/main/internal/builders/go#referencing-the-slsa-builder
     uses: slsa-framework/slsa-github-generator/.github/workflows/builder_go_slsa3.yml@v1.9.0
     with:
-      go-version-file: './go.mod'
+      go-version-file: './__PROJECT_CHECKOUT_DIR__/go.mod'
       config-file: .slsa-goreleaser/rekor-server-linux-${{matrix.arch}}.yml
       evaluated-envs: "VERSION_LDFLAGS:${{needs.ldflags.outputs.ldflags}}"
 
